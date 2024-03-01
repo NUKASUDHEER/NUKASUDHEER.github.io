@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portpholiyo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6909eb86b5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var myForm = document.getElementById('myForm');
+
+            myForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                axios.post('https://api.web3forms.com/submit', new FormData(myForm))
+                    .then(function (response) {
+                        console.log(response.data);
+                        alert('Form submitted successfully!');
+                        myForm.reset();
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+  
+    
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="./personal-portfolio-img/images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header" >Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">My Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <!-- <p>UI/Ux Designer</p> -->
+            <h1>Hi, I'am <br><span>Nuka Sudheer</span></h1>
+        </div>
+    </div>
+</div>
+<!---------Abut------- ----------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="./personal-portfolio-img/images/4275.JPG">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello! I am a final year undergraduate student majoring in Computer Science and Engineering, eagerly exploring job
+                opportunities to kickstart my career. With a passion for web technologies, particularly the MERN stack, I thrive on
+                creating dynamic and innovative web applications that exceed user expectations. Additionally, I am highly interested in
+                working with databases and SQL, eager to contribute my skills and dedication to a dynamic team in the world of
+                technology.</p>
+                  <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <!-- <p class="tab-links" onclick="opentab('experience')">Experience</p> -->
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                  </div>
+                  <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Languages</span><br>C/C++,Python, JavaScript, SQL</li>
+                        <li><span>Libraries/ Frameworks</span><br>Reactjs, Nodejs, Expressjs, Mongoose</li>
+                        <li><span>Database</span><br>MySQL, MongoDb</li>
+                        <li><span>Tools</span><br>Git/Github, Postman, VScode</li>
+                    </ul>
+                  </div>
+                  <!-- <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2021 - current</span><br>Ui/UX Design Training at ET Institute </li>
+                        <li><span>2021 - 2022</span><br>Team Lead at StarApp LLC.</li>
+                        <li><span>2020 - 2021</span><br>UI/UX Design Executive at Coin Digital Ltd.</li>
+                        <li><span>2020</span><br>Internship at ekart eCommerce.</li>
+                    </ul>
+                  </div> -->
+                  <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2020 - 2024</span><br>Indian Institute of Information Technology Sri City, Chittoor<br><span class="btech" style="color: #ababab;">B.Tech, Computer Science And Engineering &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CGPA: 8.1</span></li>
+                        <li><span>2017 - 2019</span><br>Narayana Junior College<br><span class="btech" style="color: #ababab;">Intermediate, MPC
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CGPA:
+                            9.54</span></li>
+                        <li><span>2012 - 2017</span><br>Viswasanthi High School<br><span class="btech" style="color: #ababab;">State Secondary Education
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GPA:
+                            9.7</span></li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--------------Services------->
+<!-- <div class="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                     soluta temporibus quas quo commodi! Debitis, ab veritatis, 
+                    porro tempora aut quis quod suscipit inventore dignissimos explicabo 
+                    deleniti numquam doloremque ipsa.</p>
+                    <a href="#">learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UI/UX Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                     soluta temporibus quas quo commodi! Debitis, ab veritatis, 
+                    porro tempora aut quis quod suscipit inventore dignissimos explicabo 
+                    deleniti numquam doloremque ipsa.</p>
+                    <a href="#">learn More</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                     soluta temporibus quas quo commodi! Debitis, ab veritatis, 
+                    porro tempora aut quis quod suscipit inventore dignissimos explicabo 
+                    deleniti numquam doloremque ipsa.</p>
+                    <a href="#">learn More</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!--------------------portpoliyo------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="./personal-portfolio-img/images/NLP.png">
+                <div class="layer">
+                    <h3>Job Recommendation System</h3>
+                    <p>Developed a job recommendation system using NLP to preprocess job datasets, including data cleaning, lowercasing,
+                    tokenization, all non alphabets removal, whitespaces removal and stopwords removal. Utilized the NLTK library for text
+                    preprocessing, improving data quality for recommendations. Based on the user’s resume, provide personalized job
+                    recommendations and suggest top 3 suitable role
+                    </p>
+                        <a href="https://github.com/NUKASUDHEER/Job-recommender-system"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <a href="https://job-recommender-system-zxvacghfjtwqctmwcn6xqi.streamlit.app/"><i class="fa-solid fa-2x fa-up-right-from-square"></i></a>
+
+                </div>
+                </div>
+                <div class="work">
+                <img src="./personal-portfolio-img/images/foodnet.png">
+                <div class="layer">
+                    <h3>FoodNest</h3>
+                    <p>
+                        FoodNest website facilitates seamless food ordering where users can browse through a variety of items, add them to their
+                        cart, and proceed to order. Leveraging a food API, the platform fetches real-time data, enabling users to explore and
+                        select their desired items. Through Firebase integration, the website efficiently manages user interactions, allowing
+                        for smooth CRUD (Create, Read, Update, Delete) operations to ensure a satisfying ordering experience.
+                    </p>
+                        <a href="https://github.com/NUKASUDHEER/FoodNest.git"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <a href="https://foodie-n5pt.onrender.com/"><i class="fa-solid fa-2x fa-up-right-from-square"></i></a>
+                </div>
+                </div>
+                <div class="work">
+                    <img src="./personal-portfolio-img/images/foodnet.png">
+                    <div class="layer">
+                        <h3>ElectronBazzar</h3>
+                        <p>
+                        I developed a cutting-edge e-commerce platform utilizing the MERN (MongoDB, Express.js, React.js, Node.js) stack,
+                        delivering a responsive and intuitive interface. This platform showcases the latest electronic gadgets, boasting a 98%
+                        user-friendly design to provide customers with a seamless shopping experience. Additionally, robust admin controls were
+                        implemented, facilitating streamlined management operations to ensure efficient oversight and maintenance of the
+                        website.
+                        </p>
+                        <a href="https://github.com/NUKASUDHEER/ElectronBazzar.git"><i class="fa-brands fa-2x fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./personal-portfolio-img/images/covid.jpg">
+                    <div class="layer">
+                        <h3>Covid Vaccination Management System</h3>
+                        <p>
+                            The Java-based vaccination record management application seamlessly integrates with a MySQL database, facilitating
+                            efficient storage and retrieval of data. With features tailored for Covid-related records, such as loading, displaying,
+                            and updating information, users can effortlessly manage a sample set of 50 records. The application offers
+                            functionalities like counting records per category or dose status, enhancing usability and providing valuable insights
+                            into vaccination data.
+                        </p>
+                        <a href="https://github.com/NUKASUDHEER/Covid-Vaccination-Management-System.git"><i class="fa-brands fa-2x fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./personal-portfolio-img/images/lyric.png">
+                    <div class="layer">
+                        <h3>Lyric Search Engine</h3>
+                        <p>
+                            FoodNest website facilitates seamless food ordering where users can browse through a variety of items, add
+                            them to their
+                            cart, and proceed to order. Leveraging a food API, the platform fetches real-time data, enabling users to
+                            explore and
+                            select their desired items. Through Firebase integration, the website efficiently manages user interactions,
+                            allowing
+                            for smooth CRUD (Create, Read, Update, Delete) operations to ensure a satisfying ordering experience.
+                        </p>
+                        <a href="https://github.com/NUKASUDHEER/Lyric-Search-Engine"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <a href="https://drive.google.com/drive/folders/1Pqe_iXtXbLUzGpEtStgGQp_12m2MnpWO"><i class="fa-solid fa-2x fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./personal-portfolio-img/images/drumkit.png">
+                    <div class="layer">
+                        <h3>Drum Kit</h3>
+                        <p>
+                            The drum kit project utilizes HTML, CSS, and JavaScript to create an interactive interface where users can play sounds
+                            either by clicking on images representing drums or by pressing corresponding keyboard keys. This dual functionality
+                            enhances user experience, allowing for seamless interaction with the virtual drum set using preferred input methods.
+                        </p>
+                        <a href="https://github.com/NUKASUDHEER/DrumKit-Front-End.git"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <a href="https://nukasudheer.github.io/DrumKit-Front-End/"><i
+                                class="fa-solid fa-2x fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<!-------------contact Us--------------------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">contact Me</h1>
+                <p></p>
+                <p></i></p>
+                    <a id="contactLink" href="mailto: sudheernuka10152@gmail.com" style="color: aliceblue; text-decoration: none">
+                        <p><i class="fa-solid fa-paper-plane"></i>sudheernuka10152@gmail.com</p>
+                    </a>
+                <p><i class="fa-solid fa-phone"></i>+917981834785</p>
+                <!-------Social icons-------------->
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/nuka-sudheer-34a411234/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/NUKASUDHEER/"><i class="fa-brands fa-github"></i></a>
+                </div>
+
+                <!--------------Resume ----------->
+                <a href="./Sudheer.pdf" Download class="btn btn2">Download CV </a>
+            </div>
+                <div class="contact-right">
+
+               <!-------Contact Form------------->     
+                    <!-- <form name="submit-to-google-sheet" method="post" action="https://script.google.com/macros/s/AKfycbwM0Nmsvthr2WZtjyjpqZBJ4TRQpbksIGE8DJ3rsH00Xk4I48FFDORV_AHswizMC-jE/exec">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                         <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" id="Message"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form> -->
+                    <form id="myForm" name="submit-to-google-sheet">
+                        <input type="hidden" name="access_key" value="a8dc34ac-1b6a-40b2-af2b-0bf1a9b2bcfc">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" id="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                 <span id="msg"></span>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="copyright">
+        
+    </div>
+</div>
+
+<!--------------------javascript------->
+<script>
+    document.getElementById('contactLink').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default action of following the link
+        window.location.href = 'mailto:sudheernuka10152@gmail.com'; // Open the mailto link
+    });
+</script>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        closemenu.style.right="-200";
+    }
+</script>
+
+
+</body>
+</html>
